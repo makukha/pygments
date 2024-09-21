@@ -88,6 +88,7 @@ class PythonLexer(RegexLexer):
             # Sadly, this means that we won't detect syntax error. But it's
             # more important to parse correct syntax correctly, than to
             # highlight invalid syntax.
+            (r'\{[^}]*:0.0\}', Comment.Single),
             (r'\}', String.Interpol),
             (r'\{', String.Interpol, 'expr-inside-fstring'),
             # backslashes, quotes and formatting signs must be parsed one at a time
